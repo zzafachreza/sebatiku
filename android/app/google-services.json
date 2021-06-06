@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "701454471357",
+    "project_id": "sebatiku-cee78",
+    "storage_bucket": "sebatiku-cee78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:701454471357:android:8715f25b01d0ecbbbba7d4",
+        "android_client_info": {
+          "package_name": "com.sebatiku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "701454471357-psgr89nlqhj9jcgb097ohb87ulr5tlda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD42Kc9V69qwb0rnAdEvZgb4_mCgGpPgbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "701454471357-psgr89nlqhj9jcgb097ohb87ulr5tlda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
