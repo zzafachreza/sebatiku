@@ -58,7 +58,7 @@ export default function Success({navigation, route}) {
         }}>
         <MyButton
           title="MASUK SEKARANG"
-          warna={colors.primary}
+          warna={colors.secondary}
           onPress={() => navigation.replace('Login')}
         />
       </View>

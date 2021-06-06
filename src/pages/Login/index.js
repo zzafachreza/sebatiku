@@ -23,7 +23,7 @@ export default function Login({navigation}) {
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState('');
   const [data, setData] = useState({
-    email: null,
+    username: null,
     password: null,
   });
 
@@ -40,7 +40,7 @@ export default function Login({navigation}) {
     console.log(data);
     setTimeout(() => {
       axios
-        .post('https://zavalabs.com/pembantuku/api/login.php', data)
+        .post('https://zavalabs.com/sebatiku/api/login.php', data)
         .then(res => {
           console.log(res.data);
           setLoading(false);
@@ -52,7 +52,7 @@ export default function Login({navigation}) {
           } else {
             storeData('user', res.data);
             axios
-              .post('https://zavalabs.com/pembantuku/api/update_token.php', {
+              .post('https://zavalabs.com/sebatiku/api/update_token.php', {
                 id_member: res.data.id,
                 token: token,
               })
@@ -97,19 +97,19 @@ export default function Login({navigation}) {
                 color: colors.black,
                 // maxWidth: 230,
               }}>
-              Pembantuku
+              Sebatiku
             </Text>
           </Text>
 
           <MyGap jarak={20} />
           <MyInput
-            label="Email"
-            iconname="mail"
-            value={data.nama_lengkap}
+            label="Username"
+            iconname="person"
+            value={data.username}
             onChangeText={value =>
               setData({
                 ...data,
-                email: value,
+                username: value,
               })
             }
           />

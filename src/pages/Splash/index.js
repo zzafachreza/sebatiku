@@ -43,18 +43,18 @@ export default function Splash({navigation}) {
       <Text
         style={{
           fontFamily: fonts.secondary[800],
-          fontSize: windowWidth / 10,
-          color: 'red',
+          fontSize: windowWidth / 8,
+          color: colors.primary,
         }}>
-        PEMBANTUKU
+        SEBATIKU
       </Text>
       <Text
         style={{
           fontFamily: fonts.secondary[600],
           fontSize: windowWidth / 27,
-          color: '#0a3e93',
+          color: colors.secondary,
         }}>
-        By PT Feny Jaya Mandiri (Outsourcing)
+        Sentra Batik Rejomulyo Semarang
       </Text>
     </SafeAreaView>
   );
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   image: {
     aspectRatio: 1,
-    width: 200,
-    height: 200,
+    width: 250,
+    height: 250,
   },
 });

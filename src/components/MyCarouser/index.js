@@ -19,12 +19,23 @@ export default function MyCarouser() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    axios.get('https://zavalabs.com/pembantuku/api/slider.php').then(res => {
-      setData(res.data);
-    });
+    // axios.get('https://zavalabs.com/sebatiku/api/slider.php').then(res => {
+    //   setData(res.data);
+    // });
   }, []);
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([
+    {
+      judul: 'Sentra Batik Rejomulyo',
+      image:
+        'https://images.unsplash.com/photo-1586319826907-1ff4aadbaddc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    },
+    {
+      judul: 'Sentra Batik Rejomulyo',
+      image:
+        'https://images.unsplash.com/photo-1604973104381-870c92f10343?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    },
+  ]);
 
   const _renderItem = ({item, index}) => {
     return (
@@ -40,7 +51,7 @@ export default function MyCarouser() {
           }}>
           <View
             style={{
-              backgroundColor: colors.secondary,
+              backgroundColor: colors.primary,
               position: 'absolute',
               // maxWidth: 200,
               bottom: 0,

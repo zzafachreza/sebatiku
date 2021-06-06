@@ -104,7 +104,7 @@ export default function Home({navigation}) {
                 color: colors.white,
                 fontFamily: fonts.secondary[600],
               }}>
-              {user.nama_lengkap}
+              {user.username}
             </Text>
           </View>
           <View
@@ -149,7 +149,7 @@ export default function Home({navigation}) {
                     fontSize: 18,
                     color: colors.white,
                   }}>
-                  Cari Pembantu...
+                  Cari Produk...
                 </Text>
               </View>
               <View

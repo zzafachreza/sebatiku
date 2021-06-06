@@ -13,6 +13,7 @@ import {MyButton} from '../../components';
 import 'intl';
 import 'intl/locale-data/jsonp/en';
 import {color} from 'react-native-reanimated';
+import {Icon} from 'react-native-elements/dist/icons/Icon';
 
 export default function Pembantu({navigation, route}) {
   const item = route.params;
@@ -72,99 +73,146 @@ export default function Pembantu({navigation, route}) {
             aspectRatio: 1,
           }}
           source={{
-            uri: item.foto2,
+            uri: item.foto,
           }}
         />
       </View>
-      <ScrollView
+
+      <View
         style={{
           flex: 1,
           backgroundColor: 'white',
-          borderTopLeftRadius: 50,
+          // borderTopLeftRadius: 50,
           borderTopRightRadius: 50,
-          padding: 20,
+          backgroundColor: colors.primary,
+          // padding: 20,
+          paddingTop: 10,
         }}>
-        <Text
-          style={{
-            fontFamily: fonts.secondary[600],
-            fontSize: 20,
-          }}>
-          {item.nama_lengkap} ({' '}
-          <Text
-            style={{
-              fontFamily: fonts.secondary[400],
-              fontSize: 18,
-              color: colors.primary,
-            }}>
-            {item.nama_panggilan}
-          </Text>{' '}
-          )
-        </Text>
-        <MyListData label="Tempat Lahir" value={item.tempat_lahir} />
-        <MyListData label="Tanggal Lahir" value={item.tanggal_lahir} />
-        <MyListData label="Nomor KTP" value={item.nomor_ktp} />
-        <MyListData label="Nomor KK" value={item.nomor_kk} />
-        <MyListData label="Profesi" value={item.profesi} />
-        <MyListData label="Tinggi Badan" value={item.tinggi_badan} />
-        <MyListData label="Berat Badan" value={item.berat_badan} />
-        <MyListData label="Umur" value={item.umur} />
-        <MyListData label="Mau kerja dimana ?" value={item.mau_kerja_dimana} />
-        <MyListData label="Apakah Takut Anjing" value={item.takut_anjing} />
-        <MyListData
-          label="Pernah kerja diluar negri ?"
-          value={item.kerja_diluar_negri}
-        />
-        <MyListData label="Pendidikan Terakhir" value={item.pendidikan} />
-        <MyListData label="Pengalaman Kerja" value={item.pengalaman} />
-        <MyListData label="Status Pernikahan" value={item.pernikahan} />
-        <MyListData label="Sudah Punya Anak" value={item.punya_anak} />
-        <MyListData label="Agama" value={item.agama} />
-        <MyListData label="Suku Asal" value={item.suku} />
-        <MyListData label="Bisa Bahasa Inggris" value={item.inggris} />
-        <MyListData label="Bisa Naik Motor" value={item.naik_motor} />
-        <MyListData label="Bisa Masak" value={item.bisa_masak} />
-        <MyListData
-          label="Bisa Asuk Bayi/Balita/Anak-anak"
-          value={item.bisa_asuh}
-        />
         <View
           style={{
-            marginTop: 5,
-            flexDirection: 'row',
-            borderBottomWidth: 0.5,
-            paddingBottom: 5,
-            borderBottomColor: colors.primary,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 20,
           }}>
-          <View
-            style={{
-              flex: 1,
-            }}>
-            <Text
-              style={{
-                fontFamily: fonts.secondary[600],
-                fontSize: 12,
-                color: colors.secondary,
-              }}>
-              Gaji yang diharapkan
-            </Text>
-          </View>
           <Text
             style={{
-              fontFamily: fonts.secondary[400],
-              fontSize: 12,
-              color: colors.black,
+              fontFamily: fonts.secondary[600],
+              fontSize: 20,
+              color: colors.white,
             }}>
-            Rp. {new Intl.NumberFormat().format(item.gaji)}
+            {' '}
+            {item.nama_kategori}
           </Text>
         </View>
-
-        <View style={{marginTop: 30}} />
-      </ScrollView>
+        <View style={{backgroundColor: colors.white, padding: 20, flex: 1}}>
+          <Text
+            style={{
+              fontFamily: fonts.secondary[600],
+              fontSize: 20,
+              color: colors.secondary,
+            }}>
+            {item.nama_barang}
+          </Text>
+          <Text
+            style={{
+              fontFamily: fonts.secondary[600],
+              fontSize: 20,
+              color: colors.primary,
+            }}>
+            Rp. {new Intl.NumberFormat().format(item.harga)}
+          </Text>
+          <View style={{marginTop: 20}}>
+            <View style={{flexDirection: 'row'}}>
+              <Icon name="server" type="ionicon" size={14} />
+              <Text
+                style={{
+                  left: 5,
+                  fontFamily: fonts.secondary[600],
+                  color: colors.black,
+                }}>
+                Ukuran
+              </Text>
+            </View>
+            <Text
+              style={{
+                fontFamily: fonts.secondary[400],
+                fontSize: 20,
+                color: colors.secondary,
+              }}>
+              {item.ukuran}
+            </Text>
+          </View>
+          <View style={{marginVertical: 5}}>
+            <View style={{flexDirection: 'row'}}>
+              <Icon name="bookmark" type="ionicon" size={14} />
+              <Text
+                style={{
+                  left: 5,
+                  fontFamily: fonts.secondary[600],
+                  color: colors.black,
+                }}>
+                Deskripsi Produk
+              </Text>
+            </View>
+            <Text
+              style={{
+                fontFamily: fonts.secondary[400],
+                fontSize: 20,
+                color: colors.secondary,
+              }}>
+              {item.deskripsi}
+            </Text>
+          </View>
+          <View style={{marginVertical: 5}}>
+            <View style={{flexDirection: 'row'}}>
+              <Icon name="grid" type="ionicon" size={14} />
+              <Text
+                style={{
+                  left: 5,
+                  fontFamily: fonts.secondary[600],
+                  color: colors.black,
+                }}>
+                Material
+              </Text>
+            </View>
+            <Text
+              style={{
+                fontFamily: fonts.secondary[400],
+                fontSize: 20,
+                color: colors.secondary,
+              }}>
+              {item.material}
+            </Text>
+          </View>
+          <View style={{marginVertical: 5}}>
+            <View style={{flexDirection: 'row'}}>
+              <Icon name="cube" type="ionicon" size={14} />
+              <Text
+                style={{
+                  left: 5,
+                  fontFamily: fonts.secondary[600],
+                  color: colors.black,
+                }}>
+                Stok
+              </Text>
+            </View>
+            <Text
+              style={{
+                fontFamily: fonts.secondary[400],
+                fontSize: 20,
+                left: 5,
+                color: colors.secondary,
+              }}>
+              {item.stok}
+            </Text>
+          </View>
+        </View>
+      </View>
       <MyButton
         fontWeight="bold"
         radius={0}
-        title="SELANJUTNYA"
-        warna={colors.primary}
+        title="TAMBAH KERANJANG"
+        warna={colors.secondary}
         onPress={() => {
           navigation.navigate('PembantuKonfirmasi', item);
         }}

@@ -18,18 +18,15 @@ import LottieView from 'lottie-react-native';
 export default function Register({navigation}) {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
-    nama_lengkap: null,
-    email: null,
+    username: null,
     password: null,
-    telepon: null,
-    alamat: null,
   });
 
   const simpan = () => {
     setLoading(true);
     console.log(data);
     axios
-      .post('https://zavalabs.com/pembantuku/api/register.php', data)
+      .post('https://zavalabs.com/sebatiku/api/register.php', data)
       .then(res => {
         console.log(res);
         let err = res.data.split('#');
@@ -68,58 +65,22 @@ export default function Register({navigation}) {
             // maxWidth: 230,
           }}>
           Silahkan melakukan pendaftaran terlebih dahulu, sebelum login ke
-          Aplikasi Pembantuku
+          Aplikasi Sebatiku
         </Text>
 
-        <MyGap jarak={20} />
+        <MyGap jarak={10} />
         <MyInput
-          label="Nama Lengkap"
+          label="Username"
           iconname="person"
-          value={data.nama_lengkap}
+          value={data.username}
           onChangeText={value =>
             setData({
               ...data,
-              nama_lengkap: value,
+              username: value,
             })
           }
         />
-        <MyGap jarak={10} />
-        <MyInput
-          label="Email"
-          iconname="mail"
-          value={data.email}
-          onChangeText={value =>
-            setData({
-              ...data,
-              email: value,
-            })
-          }
-        />
-        <MyGap jarak={10} />
-        <MyInput
-          label="Alamat"
-          iconname="map"
-          value={data.alamat}
-          onChangeText={value =>
-            setData({
-              ...data,
-              alamat: value,
-            })
-          }
-        />
-        <MyGap jarak={10} />
-        <MyInput
-          label="Telepon"
-          iconname="call"
-          keyboardType="number-pad"
-          value={data.telepon}
-          onChangeText={value =>
-            setData({
-              ...data,
-              telepon: value,
-            })
-          }
-        />
+
         <MyGap jarak={10} />
         <MyInput
           label="Password"

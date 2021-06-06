@@ -76,16 +76,16 @@ export default function Account({navigation}) {
               fontWeight: 'bold',
               top: 10,
             }}>
-            {user.nama_lengkap}
+            {user.username}
           </Text>
           <Divider style={{backgroundColor: colors.border, height: 1}} />
-          <Text
+          {/* <Text
             style={{
               fontSize: 16,
               top: 10,
             }}>
             {user.tlp}
-          </Text>
+          </Text> */}
         </View>
         <View
           style={{
@@ -93,45 +93,6 @@ export default function Account({navigation}) {
             // backgroundColor: 'green',
             flex: 1,
           }}>
-          <ListItem bottomDivider>
-            <Icon
-              name="envelope"
-              type="font-awesome"
-              color={colors.primary}
-              size={20}
-            />
-            <ListItem.Content>
-              <ListItem.Title>
-                <Text
-                  style={{
-                    fontFamily: 'Montserrat-SemiBold',
-                  }}>
-                  Email
-                </Text>
-              </ListItem.Title>
-              <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
-            </ListItem.Content>
-          </ListItem>
-
-          <ListItem bottomDivider>
-            <Icon
-              name="home"
-              type="font-awesome"
-              color={colors.primary}
-              size={20}
-            />
-            <ListItem.Content>
-              <ListItem.Title>
-                <Text
-                  style={{
-                    fontFamily: 'Montserrat-SemiBold',
-                  }}>
-                  Alamat
-                </Text>
-              </ListItem.Title>
-              <ListItem.Subtitle>{user.alamat}</ListItem.Subtitle>
-            </ListItem.Content>
-          </ListItem>
           <Button
             onPress={handleSave}
             title="Sign Out"

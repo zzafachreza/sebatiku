@@ -53,19 +53,19 @@ export default function GetStarted({navigation}) {
         <Image
           source={require('../../assets/logo.png')}
           style={{
-            width: 200,
-            height: 200,
+            width: 300,
+            height: 300,
           }}
         />
-        <Text
+        {/* <Text
           style={{
             marginTop: 50,
             fontFamily: fonts.secondary[800],
-            fontSize: windowWidth / 10,
-            color: 'red',
+            fontSize: windowWidth / 8,
+            color: colors.primary,
           }}>
-          PEMBANTUKU
-        </Text>
+          SEBATIKU
+        </Text> */}
       </View>
 
       <MyButton
@@ -82,15 +82,7 @@ export default function GetStarted({navigation}) {
         warna={colors.secondary}
         onPress={() => navigation.navigate('Register')}
       />
-      <MyGap jarak={20} />
-      <MyButton
-        title="AJUKAN LAMARAN"
-        Icons="send"
-        fontWeight="Bold"
-        colorText={colors.white}
-        warna="#ff7979"
-        onPress={() => navigation.navigate('Pelamar')}
-      />
+
       <Animated.View style={{height: top}} />
     </ImageBackground>
   );

@@ -1,63 +1,56 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  Dimensions,
-} from 'react-native';
+import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 import {colors} from '../../utils/colors';
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+
 const IconCategory = ({img, title, onPress, iconname}) => {
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={{
-        // flex: 1,
-        width: 80,
-        height: 90,
-        // backgroundColor: '#F8781D',
-        backgroundColor: '#FFF',
-        borderRadius: 10,
-        padding: 5,
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 5,
+    <View>
+      <TouchableOpacity
+        onPress={onPress}
+        style={{
+          // flex: 1,
+          width: 90,
+          height: 90,
 
-        elevation: 2,
-      }}>
-      <View
-        style={{
-          flex: 2,
+          // backgroundColor: '#F8781D',
+          // backgroundColor: '#FFF',
+          backgroundColor: colors.primary,
+          borderRadius: 10,
+          padding: 5,
           justifyContent: 'center',
+          alignItems: 'center',
+          // margin: 5,
+          // borderWidth: 1,
+          // borderColor: colors.secondary,
+
+          // elevation: 2,
         }}>
-        <Icon
-          type="ionicon"
-          name={iconname}
-          color={colors.secondary}
-          size={windowWidth / 13}
-        />
-      </View>
-      <View
-        style={{
-          flex: 1,
-        }}>
-        <Text
+        <View
           style={{
-            fontFamily: 'Montserrat-SemiBold',
-            // color: '#F8781D',
-            color: colors.secondary,
-            fontSize: windowWidth / 45,
-            textAlign: 'center',
+            flex: 2,
+            justifyContent: 'center',
           }}>
-          {title}
-        </Text>
-      </View>
-    </TouchableOpacity>
+          <Icon type="ionicon" name={iconname} color={colors.white} size={40} />
+        </View>
+        <View
+          style={{
+            flex: 1,
+          }}>
+          <Text
+            style={{
+              fontFamily: 'Montserrat-SemiBold',
+              // color: '#F8781D',
+              color: colors.white,
+              fontSize: 12,
+              textAlign: 'center',
+            }}>
+            {title}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
@@ -66,59 +59,24 @@ export default function MyKategori() {
 
   const dataKategori = [
     {
-      label: 'Pembantu',
-      value: 'Pembantu',
-      icon: 'woman',
+      label: 'Transaksi Mudah',
+      value: 'Transaksi Mudah',
+      icon: 'wallet',
     },
     {
-      label: 'Baby Sister',
-      value: 'Baby Sister',
-      icon: 'people',
+      label: 'Pengiriman Mudah',
+      value: 'Pengiriman Mudah',
+      icon: 'cube',
     },
     {
-      label: 'Tukang Masak',
-      value: 'Tukang Masak',
-      icon: 'restaurant',
+      label: 'Akses 24 Jam',
+      value: 'Akses 24 Jam',
+      icon: 'time',
     },
     {
-      label: 'Sopir/Driver',
-      value: 'Sopir/Driver',
-      icon: 'car',
-    },
-    {
-      label: 'Tukang Kebun',
-      value: 'Tukang Kebun',
-      icon: 'rose',
-    },
-    {
-      label: 'Tukang Pijat',
-      value: 'Tukang Pijat',
-      icon: 'hand-right',
-    },
-    {
-      label: 'Office Boy',
-      value: 'Office Boy',
-      icon: 'trash',
-    },
-    {
-      label: 'Perawat Lansia',
-      value: 'Perawat Lansia',
-      icon: 'walk',
-    },
-    {
-      label: 'Cleaning Service',
-      value: 'Cleaning Service',
-      icon: 'water',
-    },
-    {
-      label: 'Pet Care',
-      value: 'Pet Care',
-      icon: 'paw',
-    },
-    {
-      label: 'Penjaga Toko',
-      value: 'Penjaga Toko',
-      icon: 'body',
+      label: 'Keamanan Transaksi',
+      value: 'Keamanan Transaksi',
+      icon: 'shield-checkmark',
     },
   ];
 
@@ -127,7 +85,8 @@ export default function MyKategori() {
       style={{
         justifyContent: 'center',
         padding: 10,
-        backgroundColor: colors.primary,
+        backgroundColor: colors.secondary,
+
         // backgroundColor: '#FFF',
         paddingBottom: 20,
       }}>
@@ -146,14 +105,15 @@ export default function MyKategori() {
             left: 10,
             fontSize: 16,
           }}>
-          KATEGORI
+          SEBATIKU
         </Text>
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      <ScrollView>
         <View
           style={{
             flex: 1,
             flexDirection: 'row',
+            justifyContent: 'space-around',
             // backgroundColor: '#16A858',
           }}>
           {dataKategori.map(item => {
