@@ -11,6 +11,7 @@ import Carousel from 'react-native-snap-carousel';
 import {colors} from '../../utils/colors';
 import axios from 'axios';
 import {useNavigation} from '@react-navigation/native';
+import {fonts} from '../../utils/fonts';
 
 export default function MyCarouser() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -26,12 +27,26 @@ export default function MyCarouser() {
 
   const [data, setData] = useState([
     {
-      judul: 'Sentra Batik Rejomulyo',
+      judul: 'Transaksi Mudah',
+      desc: 'Dapat Melakukan transaksi dimanapun dan kapanpun',
       image:
         'https://images.unsplash.com/photo-1586319826907-1ff4aadbaddc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
     },
     {
-      judul: 'Sentra Batik Rejomulyo',
+      judul: 'Pengiriman Mudah',
+      desc: 'Terdapat ekspedisi sehingga memudahkan pengiriman',
+      image:
+        'https://images.unsplash.com/photo-1604973104381-870c92f10343?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    },
+    {
+      judul: 'Akses 24 Jam',
+      desc: 'Dapat diakses dimanapun dan kapanpun selama 24 jam',
+      image:
+        'https://images.unsplash.com/photo-1604973104381-870c92f10343?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
+    },
+    {
+      judul: 'Keamanan Transaksi',
+      desc: 'Transaksi aman dan mudah dilakukan',
       image:
         'https://images.unsplash.com/photo-1604973104381-870c92f10343?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
     },
@@ -63,11 +78,19 @@ export default function MyCarouser() {
             }}>
             <Text
               style={{
-                fontSize: 14,
-                fontFamily: 'Courgette-Regular',
+                fontSize: 18,
+                fontFamily: fonts.secondary[600],
                 color: '#FFF',
               }}>
               {item.judul}
+            </Text>
+            <Text
+              style={{
+                fontSize: 14,
+                fontFamily: fonts.secondary[400],
+                color: colors.black,
+              }}>
+              {item.desc}
             </Text>
           </View>
         </ImageBackground>

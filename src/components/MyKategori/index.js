@@ -59,24 +59,19 @@ export default function MyKategori() {
 
   const dataKategori = [
     {
-      label: 'Transaksi Mudah',
-      value: 'Transaksi Mudah',
-      icon: 'wallet',
+      label: 'Pakaian Pria',
+      value: 'Pakaian Pria',
+      icon: 'man',
     },
     {
-      label: 'Pengiriman Mudah',
-      value: 'Pengiriman Mudah',
-      icon: 'cube',
+      label: 'Pakaian Wanita',
+      value: 'Pakaian Wanita',
+      icon: 'woman',
     },
     {
-      label: 'Akses 24 Jam',
-      value: 'Akses 24 Jam',
-      icon: 'time',
-    },
-    {
-      label: 'Keamanan Transaksi',
-      value: 'Keamanan Transaksi',
-      icon: 'shield-checkmark',
+      label: 'Kain',
+      value: 'Kain',
+      icon: 'layers',
     },
   ];
 
@@ -105,7 +100,7 @@ export default function MyKategori() {
             left: 10,
             fontSize: 16,
           }}>
-          SEBATIKU
+          LIST KATEGORI
         </Text>
       </View>
       <ScrollView>
