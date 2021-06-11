@@ -26,12 +26,15 @@ import {
   PelamarDetail,
   PelamarSelesai,
   Search,
-  Pembantu,
   Kategori,
   PembantuSelsai,
   ListData,
   Notifikasi,
   PembantuKonfirmasi,
+  Barang,
+  Cart,
+  Checkout,
+  Bayar,
 } from '../pages';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BottomNavigator} from '../components';
@@ -45,7 +48,8 @@ const MainApp = () => {
     <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Transaksi" component={ListData} />
-      <Tab.Screen name="Notifikasi" component={Notifikasi} />
+      {/* <Tab.Screen name="Cart" component={Cart} /> */}
+      {/* <Tab.Screen name="Notifikasi" component={Notifikasi} /> */}
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
   );
@@ -224,11 +228,111 @@ export default function Router() {
       />
 
       <Stack.Screen
-        name="Pembantu"
-        component={Pembantu}
-        options={{
-          headerShown: false,
-        }}
+        name="Cart"
+        component={Cart}
+        options={({route, navigation}) => ({
+          title: 'Keranjang',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+            elevation: 0, // remove shadow on Android
+          },
+          cardStyleInterpolator: ({current, layouts}) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        })}
+      />
+
+      <Stack.Screen
+        name="Checkout"
+        component={Checkout}
+        options={({route, navigation}) => ({
+          title: 'Checkout',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+            elevation: 0, // remove shadow on Android
+          },
+          cardStyleInterpolator: ({current, layouts}) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        })}
+      />
+
+      <Stack.Screen
+        name="Bayar"
+        component={Bayar}
+        options={({route, navigation}) => ({
+          title: 'Pembayaran',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+            elevation: 0, // remove shadow on Android
+          },
+          cardStyleInterpolator: ({current, layouts}) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        })}
+      />
+
+      <Stack.Screen
+        name="Barang"
+        component={Barang}
+        options={({route, navigation}) => ({
+          title: 'Detail Barang',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+            elevation: 0, // remove shadow on Android
+          },
+          cardStyleInterpolator: ({current, layouts}) => {
+            return {
+              cardStyle: {
+                transform: [
+                  {
+                    translateX: current.progress.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [layouts.screen.width, 0],
+                    }),
+                  },
+                ],
+              },
+            };
+          },
+        })}
       />
 
       <Stack.Screen

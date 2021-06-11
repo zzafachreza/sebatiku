@@ -13,22 +13,12 @@ import {fonts} from '../../utils/fonts';
 import axios from 'axios';
 import {getData} from '../../utils/localStorage';
 import PushNotification from 'react-native-push-notification';
-import messaging from '@react-native-firebase/messaging';
 import {Swipeable} from 'react-native-gesture-handler';
 import {Icon} from 'react-native-elements';
 
 export default function ListData() {
   const [data, setData] = useState([]);
   const [user, setUser] = useState({});
-
-  messaging().onMessage(async remoteMessage => {
-    // Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
-    const json = JSON.stringify(remoteMessage);
-    const obj = JSON.parse(json);
-    // alert(obj.notification);
-    console.log('list transaksi', obj.notification);
-    __getData();
-  });
 
   const __getData = () => {
     getData('user').then(res => {

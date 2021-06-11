@@ -61,7 +61,7 @@ export default function MyInput({
         onChangeText={onChangeText}
         autoCapitalize="none"
         style={{
-          borderColor: colors.border,
+          borderColor: colors.primary,
           borderRadius: 10,
           borderWidth: 1,
           paddingLeft: 10,

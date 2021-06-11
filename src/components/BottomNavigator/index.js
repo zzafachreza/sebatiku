@@ -59,6 +59,8 @@ export default function BottomNavigator({state, descriptors, navigation}) {
           iconName = 'list';
         } else if (label === 'Notifikasi') {
           iconName = 'notifications';
+        } else if (label === 'Cart') {
+          iconName = 'cart';
         }
 
         return (
@@ -84,28 +86,29 @@ export default function BottomNavigator({state, descriptors, navigation}) {
               }}>
               <View
                 style={{
-                  position: iconName === 'barcode' ? 'absolute' : 'relative',
-                  backgroundColor: iconName === 'barcode' ? 'red' : 'white',
-                  // borderTopWidth: iconName === 'barcode' && isFocused ? 5 : 0,
+                  position: iconName === 'cart' ? 'absolute' : 'relative',
+                  backgroundColor:
+                    iconName === 'cart' ? colors.secondary : 'white',
+                  // borderTopWidth: iconName === 'cart' && isFocused ? 5 : 0,
                   borderWidth: 3,
                   // borderColor: 'red',
                   // padding: 10,
                   // position: 'absolute',
-                  position: iconName === 'barcode' ? 'absolute' : 'relative',
-                  borderColor: iconName === 'barcode' ? 'white' : 'white',
-                  borderRadius: iconName === 'barcode' ? 50 : 0,
-                  width: iconName === 'barcode' ? 90 : 80,
-                  marginBottom: iconName === 'barcode' ? 0 : 0,
-                  bottom: iconName === 'barcode' ? -45 : 0,
-                  height: iconName === 'barcode' ? 90 : 50,
+                  position: iconName === 'cart' ? 'absolute' : 'relative',
+                  borderColor: iconName === 'cart' ? 'white' : 'white',
+                  borderRadius: iconName === 'cart' ? 50 : 0,
+                  width: iconName === 'cart' ? 90 : 80,
+                  marginBottom: iconName === 'cart' ? 0 : 0,
+                  bottom: iconName === 'cart' ? -45 : 0,
+                  height: iconName === 'cart' ? 90 : 50,
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}>
-                {iconName === 'barcode' ? (
+                {iconName === 'cart' ? (
                   <Icon
                     name={iconName}
                     type="ionicon"
-                    color={isFocused ? 'white' : 'white'}
+                    color={isFocused ? colors.primary : 'white'}
                   />
                 ) : (
                   <Icon
@@ -119,9 +122,9 @@ export default function BottomNavigator({state, descriptors, navigation}) {
                   style={{
                     fontSize: windowWidth / 45,
                     color:
-                      isFocused && iconName == 'barcode'
-                        ? 'white'
-                        : !isFocused && iconName == 'barcode'
+                      isFocused && iconName == 'cart'
+                        ? 'cart'
+                        : !isFocused && iconName == 'cart'
                         ? 'white'
                         : isFocused
                         ? colors.primary

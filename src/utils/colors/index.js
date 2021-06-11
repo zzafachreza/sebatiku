@@ -8,5 +8,5 @@ export const colors = {
   danger: 'red',
   black: 'black',
   white: 'white',
-  border: '#0E542E',
+  border: '#dedede',
 };

@@ -10,6 +10,7 @@ import {
   ScrollView,
   TouchableOpacity,
   TouchableNativeFeedback,
+  Linking,
 } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import {colors} from '../../utils/colors';
@@ -107,7 +108,7 @@ export default function Home({navigation}) {
               {user.username}
             </Text>
           </View>
-          <View
+          {/* <View
             style={{
               // flex: 1,
               justifyContent: 'center',
@@ -120,7 +121,27 @@ export default function Home({navigation}) {
               style={{width: 80, height: 80}}
               source={require('../../assets/logo.png')}
             />
-          </View>
+          </View> */}
+          <TouchableOpacity
+            onPress={() => {
+              Linking.openURL('https://goo.gl/maps/YrG3zJRqn9t7fEcC9');
+            }}
+            style={{
+              padding: 20,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Icon type="ionicon" name="map" color={colors.white} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Cart')}
+            style={{
+              padding: 20,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Icon type="ionicon" name="cart" color={colors.white} />
+          </TouchableOpacity>
         </View>
         <View style={{padding: 10, backgroundColor: colors.primary}}>
           <TouchableNativeFeedback

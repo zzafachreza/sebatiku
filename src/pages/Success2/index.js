@@ -17,10 +17,6 @@ export default function Success2({navigation, route}) {
   const windowHeight = Dimensions.get('window').height;
   const txt = new Animated.Value(-windowWidth);
 
-  setTimeout(() => {
-    navigation.replace('MainApp');
-  }, 1000);
-
   Animated.timing(txt, {
     toValue: 10,
     duration: 800,
@@ -43,7 +39,7 @@ export default function Success2({navigation, route}) {
         <LottieView
           source={require('../../assets/success.json')}
           autoPlay
-          loop
+          loop={false}
         />
         <Animated.Text
           style={{
@@ -52,8 +48,19 @@ export default function Success2({navigation, route}) {
             color: 'black',
             bottom: txt,
           }}>
-          {messege}
+          Berhasil di tambahkan
         </Animated.Text>
+      </View>
+      <View
+        style={{
+          //   flex: 1,
+          padding: 10,
+        }}>
+        <MyButton
+          title="LIHAT KERANJANG"
+          warna={colors.secondary}
+          onPress={() => navigation.replace('Cart')}
+        />
       </View>
     </SafeAreaView>
   );

@@ -31,7 +31,7 @@ export default function Kategori({navigation, route}) {
 
   useEffect(() => {
     axios
-      .post('https://zavalabs.com/pembantuku/api/pelamar_category.php', {
+      .post('https://zavalabs.com/sebatiku/api/barang_category.php', {
         kategori: kategori,
       })
       .then(res => {
@@ -54,22 +54,24 @@ export default function Kategori({navigation, route}) {
         style={styles.card}
         onPress={() => navigation.navigate('Pembantu', item)}
         activeOpacity={1.0}>
-        <Image style={styles.image} source={{uri: item.foto2}} />
+        <Image style={styles.image} source={{uri: item.foto}} />
         <View
           style={{
             flexDirection: 'row',
-            alignItems: 'flex-end',
-            justifyContent: 'flex-end',
+            alignItems: 'flex-start',
+            justifyContent: 'flex-start',
           }}>
           <Text
             style={{
               fontFamily: fonts.secondary[600],
               fontSize: 14,
-              backgroundColor: colors.secondary,
+              backgroundColor: colors.primary,
               paddingHorizontal: 20,
+              // borderBottomLeftRadius: 20,
+              borderTopRightRadius: 20,
               color: colors.white,
             }}>
-            {item.sebagai_apa}
+            {item.nama_kategori}
           </Text>
         </View>
         <View style={styles.detailsContainer}>
@@ -79,38 +81,35 @@ export default function Kategori({navigation, route}) {
             }}>
             <Text style={styles.title}>
               {' '}
-              Rp. {new Intl.NumberFormat().format(item.gaji)}
+              Rp. {new Intl.NumberFormat().format(item.harga)}
             </Text>
           </View>
           <View
             style={{
               flex: 1,
             }}>
-            <Text style={styles.subTitle}>{item.nama_lengkap}</Text>
+            <Text style={styles.subTitle}>{item.nama_barang}</Text>
           </View>
-
-          <View
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'flex-end',
+            justifyContent: 'flex-end',
+          }}>
+          <Icon name="storefront" color={colors.secondary} />
+          <Text
             style={{
-              marginTop: 10,
-              flexDirection: 'row',
-              alignItems: 'center',
+              fontFamily: fonts.secondary[600],
+              fontSize: 14,
+              padding: 3,
+              backgroundColor: colors.secondary,
+              borderTopLeftRadius: 20,
+              paddingHorizontal: 20,
+              color: colors.white,
             }}>
-            <Icon
-              name="map"
-              type="ionicon"
-              color={colors.secondary}
-              size={12}
-            />
-            <Text
-              style={{
-                fontFamily: fonts.secondary[600],
-                fontSize: 12,
-                left: 10,
-                color: colors.black,
-              }}>
-              {item.alamat}
-            </Text>
-          </View>
+            {item.nama_toko}
+          </Text>
         </View>
       </TouchableOpacity>
     );
@@ -172,7 +171,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   image: {
-    width: 180,
+    width: '100%',
     height: 200,
   },
   detailsContainer: {

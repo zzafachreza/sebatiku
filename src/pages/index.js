@@ -17,12 +17,16 @@ import PelamarSelesai from './PelamarSelesai';
 import Search from './Search';
 import Booking from './Booking';
 import BookingDetail from './BookingDetail';
-import Pembantu from './Pembantu';
 import Kategori from './Kategori';
 import PembantuSelsai from './PembantuSelesai';
 import ListData from './ListData';
 import Notifikasi from './Notifikasi';
 import PembantuKonfirmasi from './PembantuKonfirmasi';
+import Barang from './Barang';
+import Cart from './Cart';
+import Checkout from './Checkout';
+import Bayar from './Bayar';
+
 export {
   Splash,
   GetStarted,
@@ -41,7 +45,6 @@ export {
   PelamarDetail,
   PelamarSelesai,
   Search,
-  Pembantu,
   Booking,
   BookingDetail,
   Kategori,
@@ -49,4 +52,8 @@ export {
   ListData,
   Notifikasi,
   PembantuKonfirmasi,
+  Barang,
+  Cart,
+  Checkout,
+  Bayar,
 };
