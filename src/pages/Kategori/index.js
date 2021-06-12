@@ -52,7 +52,7 @@ export default function Kategori({navigation, route}) {
     return (
       <TouchableOpacity
         style={styles.card}
-        onPress={() => navigation.navigate('Pembantu', item)}
+        onPress={() => navigation.navigate('Barang', item)}
         activeOpacity={1.0}>
         <Image style={styles.image} source={{uri: item.foto}} />
         <View

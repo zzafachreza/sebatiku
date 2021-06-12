@@ -169,6 +169,105 @@ export default function Bayar({navigation, route}) {
           flex: 1,
         }}>
         <View style={{flex: 1}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              borderBottomWidth: 1,
+              borderBottomColor: colors.border,
+            }}>
+            <Text
+              style={{
+                flex: 1,
+                color: colors.black,
+                fontFamily: fonts.secondary[400],
+                padding: 10,
+              }}>
+              Transfer Ke BANK :
+            </Text>
+            <Image
+              source={require('../../assets/bca.png')}
+              style={{width: 100, height: 30, margin: 10}}
+            />
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              borderBottomWidth: 1,
+              borderBottomColor: colors.border,
+            }}>
+            <Text
+              style={{
+                flex: 1,
+                color: colors.black,
+                fontSize: 16,
+                fontFamily: fonts.secondary[400],
+                padding: 10,
+              }}>
+              Nomor Rekening
+            </Text>
+            <Text
+              style={{
+                color: colors.black,
+                fontSize: 16,
+                fontFamily: fonts.secondary[600],
+                padding: 10,
+              }}>
+              75243132
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              borderBottomWidth: 1,
+              borderBottomColor: colors.border,
+            }}>
+            <Text
+              style={{
+                flex: 1,
+                color: colors.black,
+                fontSize: 16,
+                fontFamily: fonts.secondary[400],
+                padding: 10,
+              }}>
+              Atas Nama
+            </Text>
+            <Text
+              style={{
+                color: colors.black,
+                fontSize: 16,
+                fontFamily: fonts.secondary[600],
+                padding: 10,
+              }}>
+              SEBATIKU
+            </Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              borderBottomWidth: 1,
+              borderBottomColor: colors.border,
+            }}>
+            <Text
+              style={{
+                flex: 1,
+                color: colors.black,
+                fontSize: 16,
+                fontFamily: fonts.secondary[400],
+                padding: 10,
+              }}>
+              Total
+            </Text>
+            <Text
+              style={{
+                color: colors.primary,
+                fontSize: 20,
+                fontFamily: fonts.secondary[600],
+                padding: 10,
+              }}>
+              Rp. {new Intl.NumberFormat().format(data.total)}
+            </Text>
+          </View>
+
           <UploadFoto
             onPress1={() => getCamera(1)}
             onPress2={() => getGallery(1)}
